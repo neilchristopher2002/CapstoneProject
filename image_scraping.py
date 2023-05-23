@@ -11,7 +11,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"
 }
 
-spice = 'rosemary'
+spice = 'daun salam'
 parameter = {
     'q': spice,
     'tbm': 'isch',
@@ -46,7 +46,7 @@ def get_image(headers, parameter):
     google_images = []
     num_images = 500
     start_index = 0
-    path = 'D:\\Kuliah\\Bangkit\\Capstone\\CapstoneProject\\Dataset\\Rosemary'
+    path = 'Dataset\\BayLeaves'
     image_index = 1  # Set index gambar berurutan
 
     while len(google_images) < num_images:
@@ -98,7 +98,7 @@ def get_image(headers, parameter):
             try:
                 # Implement timeout
                 response = requests.get(original, timeout=30)  # Add timeout
-                with open(f'{path}\\rosemary_{image_index}.jpg', 'wb') as file:
+                with open(f'{path}\\daunSalam_{image_index}.jpg', 'wb') as file:
                     file.write(response.content)
             except requests.exceptions.RequestException as e:
                 print('Error:', e)
