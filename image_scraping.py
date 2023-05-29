@@ -11,7 +11,7 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36"
 }
 
-spice = 'daun salam'
+spice = 'dog'
 parameter = {
     'q': spice,
     'tbm': 'isch',
@@ -44,9 +44,9 @@ def search_data(soup):
 
 def get_image(headers, parameter):
     google_images = []
-    num_images = 500
+    num_images = 10
     start_index = 0
-    path = 'Dataset\\BayLeaves'
+    path = 'test'
     image_index = 1  # Set index gambar berurutan
 
     while len(google_images) < num_images:
