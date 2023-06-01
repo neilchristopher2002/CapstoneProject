@@ -7,7 +7,7 @@ import socket
 def get_image():
     image_res = []
 
-    spice = ['fresh cardamom']
+    spice = ['green cardamom']
 
     for query in spice:
         parameter = {
@@ -41,7 +41,7 @@ def get_image():
         opener.addheaders = [("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36")]
         urllib.request.install_opener(opener)
 
-        filename = f'cardamom{index}.jpg'
+        filename = f'cardamom_{index}.jpg'
 
         try:
             with urllib.request.urlopen(image, timeout=30) as response:
