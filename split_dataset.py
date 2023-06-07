@@ -2,33 +2,31 @@ import os
 import random
 import shutil
 
-img_dir = os.listdir('Dataset\WhitePepper')
-
+img_dir = os.listdir('Data2/Turmeric')
 img_dir.sort()
+
+img_dir = img_dir[:150]
 
 random.seed(0)
 random.shuffle(img_dir)
 
-split_param_1 = int(0.60 * len(img_dir))
-split_param_2 = int(0.80 * len(img_dir))
+split_param = int(0.7 * len(img_dir))
 
-train_image = img_dir[:split_param_1]
-test_image = img_dir[split_param_1:split_param_2]
-val_image = img_dir[split_param_2:]
+train_images = img_dir[:split_param]
+val_images = img_dir[split_param:]
 
-src = 'Dataset\WhitePepper'
-train_dir = 'ClassificationData\Train\WhitePepper'
-test_dir = 'ClassificationData\Test\WhitePepper'
-val_dir = 'ClassificationData\Validation\WhitePepper'
+src = 'Data2/Turmeric'
+train_dir = 'ClassificationData/Train/Turmeric'
+val_dir = 'ClassificationData/Validation/Turmeric'
 
-for image in train_image:
+# Create directories if they don't exist
+os.makedirs(train_dir, exist_ok=True)
+os.makedirs(val_dir, exist_ok=True)
+
+for image in train_images:
     path = os.path.join(src, image)
     shutil.copy(path, train_dir)
 
-for image in test_image:
-    path = os.path.join(src, image)
-    shutil.copy(path, test_dir)
-
-for image in val_image:
+for image in val_images:
     path = os.path.join(src, image)
     shutil.copy(path, val_dir)
